@@ -37,8 +37,6 @@ MaxApi.addHandler("detect", (...midiNotes) => {
         //send data back into max
         MaxApi.outlet("chords", ...chords);
 
-        //update web
-        
     }
     else {
         MaxApi.outlet("chords", "unknown");
