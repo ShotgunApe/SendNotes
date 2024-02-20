@@ -1,5 +1,5 @@
 # SendNotes
-Node.js + Max Msp + Xebra
+Node.js + Max MSP + Xebra
 
 Send Notation live to performers
 
