@@ -3,12 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Max with Node</title>
 </head>
 <body>
-    <p>Max with Node!</p>
-    <script>
+    <p>Canvas:</p>
+    <canvas id="canvas" width="600px" height="400px"></canvas>
+    <script src="https://cycling74.s3.amazonaws.com/download/xebra.js"></script>
+    <script type="text/javascript">
+        var fillcolor = [0,0,255];
+        var filltext  = "Hi!!";
+        var px = 40;
+        var py = 40;
+
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            
+            ctx.clearRect(0,0,600,400);
+            ctx.font = "36px Arial";
+            ctx.fillstyle = "rgb(" + fillcolor[0] + "," + fillcolor[1] + "," + fillcolor[2] + ")";
+            ctx.fillText(filltext, px, py);
+
+            window.requestAnimationFrame(draw);
+        }
+
+        function updateWithObject(object) {
+            if (object.getParamValue("varname") === "message") {
+                filltext  = object.getParamValue("textfield");
+                fillcolor = object.getParamValue("textcolor");
+                fillcolor = fillcolor.map(function(color) {return Math.floor(255*color)});
+            }
+        }
+
+        var options = {
+            hostname: "localhost",
+            port: 8086,
+            auto_connect: false,
+        }
+
+        var xebra = new Xebra.State(options);
+
+        xebra.on("object_added", updateWithObject);
+        xebra.on("object_changed", updateWithObject);
+
+        xebra.connect();
         
+        window.requestAnimationFrame(draw);
+
     </script>
 </body>
 </html>

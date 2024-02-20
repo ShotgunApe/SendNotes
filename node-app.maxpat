@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1143.0, 310.0, 640.0, 480.0 ],
+		"rect" : [ 995.0, 85.0, 490.0, 920.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -68,7 +68,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 228.571426391601562, 479.0, 156.0, 20.0 ]
+					"patching_rect" : [ 228.571426391601562, 479.0, 156.0, 20.0 ],
+					"varname" : "message"
 				}
 
 			}
@@ -164,8 +165,20 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 515.789468765258789, 160.0, 336.0, 53.0 ]
+					"parameter_enable" : 1,
+					"patching_rect" : [ 515.789468765258789, 160.0, 336.0, 53.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_invisible" : 1,
+							"parameter_longname" : "kslider",
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "kslider",
+							"parameter_type" : 3
+						}
+
+					}
+,
+					"varname" : "kslider"
 				}
 
 			}
@@ -237,10 +250,24 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 1
 					}
 ,
 					"text" : "node.script server.js @watch 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"id" : "obj-2",
+					"ignoreclick" : 1,
+					"maxclass" : "mira.frame",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 555.789465546607971, 525.974020957946777, 256.000006437301636, 182.0 ]
 				}
 
 			}
@@ -386,6 +413,20 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-8" : [ "kslider", "kslider", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "fit_jweb_to_bounds.js",
 				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
@@ -406,7 +447,7 @@
 			}
 , 			{
 				"name" : "server.js",
-				"bootpath" : "~/Documents/Node/node_http_app",
+				"bootpath" : "Q:/GithubWindows/SendNotes",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
